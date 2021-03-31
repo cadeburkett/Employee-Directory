@@ -14,11 +14,15 @@ function ShowEmployees() {
 
     }, [])
 
-    function sortAge() {
+    function sortName() {
         const sortedEmployees = state.users.sort((current, next) => {
-            const currentAge = current.dob.age
-            const nextAge = next.dob.age
-            return nextAge.diff(currentAge)
+            if (current.name.last < next.name.last) {
+                return -1
+            } else if (current.name.last > next.name.last) {
+                return 1
+            } else {
+                return 0
+            }
         })
         setState(
             {
@@ -46,7 +50,7 @@ function ShowEmployees() {
             <h1>Employee Directory</h1>
             <div>
                 <input onChange={filterName}></input>
-                <button onClick={sortAge}>Sort by Age</button>
+                <button onClick={sortName}>Sort by Employee's Last Name</button>
             </div>
             {state.filterUsers.map(user => {
                 return <EmployeeInfo user={user}></EmployeeInfo>
