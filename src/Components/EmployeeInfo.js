@@ -3,10 +3,13 @@ import React from "react";
 
 function EmployeeInfo(props) {
     return (
-        <div>
+        <div className="employeeInfoRow">
             <img src={props.user.picture.thumbnail}/>
             <p>{props.user.name.first} {props.user.name.last}</p>
             <p>{props.user.email}</p>
+            <p>{props.user.cell}</p>
+            <p>{props.user.location.city} {props.user.location.country}</p>
+            <p>{props.user.dob.age}</p>
         </div>
     )
 }
