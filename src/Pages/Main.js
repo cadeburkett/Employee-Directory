@@ -3,28 +3,25 @@ import API from "../Utils/API";
 import EmployeeInfo from "../Components/EmployeeInfo"
 
 function ShowEmployees() {
-    const [state, setState] = useState({})
+    const [state, setState] = useState({ users: [], filterUsers: [] })
     useEffect(() => {
-        API.getEmployee()
-        .then( res => {
+        API.getEmployee().then( res => {
             console.log(res.data.results)
             setState(
-                {users: res.data.results}
+                {users: res.data.results, filterUsers: res.data.results}
             )
         })
 
-    })
+    }, [])
 
     return (
         <div>
-            Employee Directory
-
-            return(
-                <EmployeeInfo></EmployeeInfo>
-            )
-
+            <h1>Employee Directory</h1>
+            {state.filterUsers.map(user => {
+                return <EmployeeInfo user={user}></EmployeeInfo>
+            })}
         </div>
     )
 }
 
-export default ShowEmployees
+export default ShowEmployees;
