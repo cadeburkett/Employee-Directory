@@ -1,0 +1,38 @@
+/* body {
+    background-color: rgb(109, 109, 116);
+} */
+
+.employeeInfoRow {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    margin-bottom: -1px;
+}
+
+.employeePhoto {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+}
+
+.employeeName {
+    width: 10vw;
+    margin: 5px;
+}
+
+.employeeEmail {
+    width: 25vw;
+    margin-right: 8px;
+}
+
+.employeeCell {
+    width: 20vw;
+}
+
+.employeeLocation {
+    width: 20vw;
+}
+
+.employeeAge {
+    width: 10vw;
+}
