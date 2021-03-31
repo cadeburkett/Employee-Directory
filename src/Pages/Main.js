@@ -49,7 +49,7 @@ function ShowEmployees() {
         <div>
             <h1>Employee Directory</h1>
             <div>
-                <input onChange={filterName}></input>
+                <input onChange={filterName} placeholder="Search by Name"></input>
                 <button onClick={sortName}>Sort by Employee's Last Name</button>
             </div>
             {state.filterUsers.map(user => {
